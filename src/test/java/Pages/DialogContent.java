@@ -11,10 +11,12 @@ public class DialogContent extends Parent {
         PageFactory.initElements(GWD.getDriver(), this);
     }
 
+    @FindBy(linkText = "Laptops")
+    private WebElement laptops;
+
     WebElement myElement;
 
     public void findAndSend(String strElement, String value) {  // 2.aşama
-        // burda string isimden weblemente ulaşıcam
         switch (strElement) {
             //case "searchInput": myElement = searchInput; break;
         }
@@ -25,7 +27,7 @@ public class DialogContent extends Parent {
     public void findAndClick(String strElement) {
 
         switch (strElement) {
-            //case "cookies": myElement = cookies; break;
+            case "laptops": myElement = laptops; break;
         }
 
         clickFunction(myElement);

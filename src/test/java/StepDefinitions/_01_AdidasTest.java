@@ -1,15 +1,31 @@
+package StepDefinitions;
+
+import Pages.DialogContent;
+import Utilities.GWD;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class _01_AdidasTest {
+
+    DialogContent dc = new DialogContent();
+
     @Given("Nagivgate to blaze.com")
     public void nagivgateToBlazeCom() {
+
+        GWD.getDriver().get("https://www.demoblaze.com/index.html");
+        GWD.getDriver().manage().window().maximize();
+
     }
 
     @When("Navigate to {string}")
     public void navigateTo(String arg0) {
+
+        dc.findAndClick("laptops");
+        dc.findAndClick("sony");
+        dc.findAndClick("addToCart");
+
     }
 
     @Then("{string} and click on Add to cart")
@@ -18,10 +34,6 @@ public class _01_AdidasTest {
 
     @And("Accept pop up confirmation")
     public void acceptPopUpConfirmation() {
-    }
-
-    @Then("{string} and click on Add to cart")
-    public void dellIGbAndClickOnAddToCart(String arg0) {
     }
 
     @When("Navigate to Cart")

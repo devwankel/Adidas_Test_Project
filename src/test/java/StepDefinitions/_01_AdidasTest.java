@@ -1,6 +1,7 @@
 package StepDefinitions;
 
 import Pages.DialogContent;
+import Pages.Parent;
 import Utilities.GWD;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
@@ -19,17 +20,31 @@ public class _01_AdidasTest {
 
     }
 
-    @When("Navigate to {string}")
-    public void navigateTo(String arg0) {
+    @When("Navigate to Laptop")
+    public void navigateTo() {
 
         dc.findAndClick("laptops");
         dc.findAndClick("sony");
         dc.findAndClick("addToCart");
 
+        Parent.waitUntilAlert();
+        GWD.getDriver().switchTo().alert().accept();
+
     }
 
-    @Then("{string} and click on Add to cart")
-    public void andClickOnAddToCart(String arg0) {
+    @Then("Sony vaio i5 and click on Add to cart")
+    public void andClickOnAddToCart() {
+
+        GWD.getDriver().navigate().back();
+        GWD.getDriver().navigate().back();
+
+        dc.findAndClick("laptops");
+        dc.findAndClick("dell");
+        dc.findAndClick("addToCart");
+
+        Parent.waitUntilAlert();
+        GWD.getDriver().switchTo().alert().accept();
+
     }
 
     @And("Accept pop up confirmation")
@@ -40,12 +55,16 @@ public class _01_AdidasTest {
     public void navigateToCart() {
     }
 
-    @Then("Delete {string} from cart")
-    public void deleteFromCart(String arg0) {
+    @Then("Dell i7 8gb and click on Add to cart")
+    public void dellIGbAndClickOnAddToCart() {
     }
 
-    @And("Click on {string}")
-    public void clickOn(String arg0) {
+    @Then("Delete Dell i7 8gb from cart")
+    public void deleteFromCart() {
+    }
+
+    @And("Click on Place order")
+    public void clickOn() {
     }
 
     @Then("Fill in all web form fields")

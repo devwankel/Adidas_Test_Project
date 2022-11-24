@@ -14,6 +14,15 @@ public class DialogContent extends Parent {
     @FindBy(linkText = "Laptops")
     private WebElement laptops;
 
+    @FindBy(linkText = "Sony vaio i5")
+    private WebElement sony;
+
+    @FindBy(linkText = "Add to cart")
+    private WebElement addToCart;
+
+    @FindBy(linkText = "Dell i7 8gb")
+    private WebElement dell;
+
     WebElement myElement;
 
     public void findAndSend(String strElement, String value) {  // 2.aşama
@@ -28,6 +37,9 @@ public class DialogContent extends Parent {
 
         switch (strElement) {
             case "laptops": myElement = laptops; break;
+            case "sony" : myElement = sony; break;
+            case "addToCart" : myElement = addToCart; break;
+            case "dell" : myElement = dell; break;
         }
 
         clickFunction(myElement);

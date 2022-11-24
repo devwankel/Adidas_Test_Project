@@ -48,6 +48,11 @@ public class Parent {
         wait.until(ExpectedConditions.elementToBeClickable(element));
     }
 
+    public static void waitUntilAlert() {
+        WebDriverWait wait = new WebDriverWait(GWD.getDriver(), Duration.ofSeconds(30));
+        wait.until(ExpectedConditions.alertIsPresent());
+    }
+
     public void verifyContainsText(WebElement element, String text)
     {
         waitUntilVisible(element); // gözükene kadar bekle

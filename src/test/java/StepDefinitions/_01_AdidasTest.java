@@ -24,39 +24,38 @@ public class _01_AdidasTest {
     public void navigateTo() {
 
         dc.findAndClick("laptops");
-        dc.findAndClick("sony");
-        dc.findAndClick("addToCart");
-
-        Parent.waitUntilAlert();
-        GWD.getDriver().switchTo().alert().accept();
 
     }
 
     @Then("Sony vaio i5 and click on Add to cart")
     public void andClickOnAddToCart() {
 
-        GWD.getDriver().navigate().back();
-        GWD.getDriver().navigate().back();
-
-        dc.findAndClick("laptops");
-        dc.findAndClick("dell");
+        dc.findAndClick("sony");
         dc.findAndClick("addToCart");
-
-        Parent.waitUntilAlert();
-        GWD.getDriver().switchTo().alert().accept();
 
     }
 
     @And("Accept pop up confirmation")
     public void acceptPopUpConfirmation() {
-    }
 
-    @When("Navigate to Cart")
-    public void navigateToCart() {
+        Parent.waitUntilAlert();
+        GWD.getDriver().switchTo().alert().accept();
+
+        GWD.getDriver().navigate().back();
+        GWD.getDriver().navigate().back();
+
     }
 
     @Then("Dell i7 8gb and click on Add to cart")
     public void dellIGbAndClickOnAddToCart() {
+
+        dc.findAndClick("dell");
+        dc.findAndClick("addToCart");
+
+    }
+
+    @When("Navigate to Cart")
+    public void navigateToCart() {
     }
 
     @Then("Delete Dell i7 8gb from cart")

@@ -56,10 +56,16 @@ public class _01_AdidasTest {
 
     @When("Navigate to Cart")
     public void navigateToCart() {
+
+        dc.findAndClick("cart");
+
     }
 
     @Then("Delete Dell i7 8gb from cart")
     public void deleteFromCart() {
+
+        dc.findAndClick("deleteProduct");
+
     }
 
     @And("Click on Place order")

@@ -70,14 +70,28 @@ public class _01_AdidasTest {
 
     @And("Click on Place order")
     public void clickOn() {
+
+        dc.findAndClick("placerOrder");
+
     }
 
     @Then("Fill in all web form fields")
     public void fillInAllWebFormFields() {
+
+        dc.findAndSend("name","Alex");
+        dc.findAndSend("country","Brazil");
+        dc.findAndSend("city","Rio");
+        dc.findAndSend("card","1234-1245-2578-2356");
+        dc.findAndSend("month","12");
+        dc.findAndSend("year","2025");
+
     }
 
     @And("Click on Purchase")
     public void clickOnPurchase() {
+
+        dc.findAndClick("purchase");
+
     }
 
     @Then("Capture and log purchase Id and Amount")

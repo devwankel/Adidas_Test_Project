@@ -29,11 +29,40 @@ public class DialogContent extends Parent {
     @FindBy(xpath = "(//a[text()='Delete'])[1]")
     private WebElement deleteProduct;
 
+    @FindBy(css = "div.panel-info+button")
+    private WebElement placerOrder;
+
+    @FindBy(id = "name")
+    private WebElement name;
+
+    @FindBy(id = "country")
+    private WebElement country;
+
+    @FindBy(id = "city")
+    private WebElement city;
+
+    @FindBy(id = "card")
+    private WebElement card;
+
+    @FindBy(id = "month")
+    private WebElement month;
+
+    @FindBy(id = "year")
+    private WebElement year;
+
+    @FindBy(xpath = "//button[text()='Purchase']")
+    private WebElement purchase;
+
     WebElement myElement;
 
     public void findAndSend(String strElement, String value) {  // 2.aşama
         switch (strElement) {
-            //case "searchInput": myElement = searchInput; break;
+            case "name": myElement = name; break;
+            case "country": myElement = country; break;
+            case "city": myElement = city; break;
+            case "card": myElement = card; break;
+            case "month": myElement = month; break;
+            case "year": myElement = year; break;
         }
 
         sendKeysFunction(myElement, value);
@@ -48,6 +77,8 @@ public class DialogContent extends Parent {
             case "dell" : myElement = dell; break;
             case "cart" : myElement = cart; break;
             case "deleteProduct" : myElement = deleteProduct; break;
+            case "placerOrder" : myElement = placerOrder; break;
+            case "purchase" : myElement = purchase; break;
         }
 
         clickFunction(myElement);

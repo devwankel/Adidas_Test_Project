@@ -20,14 +20,14 @@ public class _01_AdidasTest {
 
     }
 
-    @When("Navigate to Laptop")
+    @When("Navigate to \"Laptop\"")
     public void navigateTo() {
 
         dc.findAndClick("laptops");
 
     }
 
-    @Then("Sony vaio i5 and click on Add to cart")
+    @Then("Sony vaio i5 and click on Add to \"cart\"")
     public void andClickOnAddToCart() {
 
         dc.findAndClick("sony");
@@ -46,7 +46,7 @@ public class _01_AdidasTest {
 
     }
 
-    @Then("Dell i7 8gb and click on Add to cart")
+    @Then("\"Dell i7 8gb\" and click on Add to cart")
     public void dellIGbAndClickOnAddToCart() {
 
         dc.findAndClick("dell");
@@ -54,21 +54,21 @@ public class _01_AdidasTest {
 
     }
 
-    @When("Navigate to Cart")
+    @When("Navigate to \"Cart\"")
     public void navigateToCart() {
 
         dc.findAndClick("cart");
 
     }
 
-    @Then("Delete Dell i7 8gb from cart")
+    @Then("Delete \"Dell i7 8gb from cart\"")
     public void deleteFromCart() {
 
         dc.findAndClick("deleteProduct");
 
     }
 
-    @And("Click on Place order")
+    @And("Click on \"Place order\"")
     public void clickOn() {
 
         dc.findAndClick("placerOrder");
@@ -87,7 +87,7 @@ public class _01_AdidasTest {
 
     }
 
-    @And("Click on Purchase")
+    @And("Click on \"Purchase\"")
     public void clickOnPurchase() {
 
         dc.findAndClick("purchase");

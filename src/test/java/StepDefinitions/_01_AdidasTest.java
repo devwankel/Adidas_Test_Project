@@ -27,7 +27,7 @@ public class _01_AdidasTest {
 
     }
 
-    @Then("Sony vaio i5 and click on Add to \"cart\"")
+    @Then("\"Sony vaio i5\" and click on Add to cart")
     public void andClickOnAddToCart() {
 
         dc.findAndClick("sony");
@@ -61,10 +61,11 @@ public class _01_AdidasTest {
 
     }
 
-    @Then("Delete \"Dell i7 8gb from cart\"")
+    @Then("Delete \"Dell i7 8gb\" from cart")
     public void deleteFromCart() {
 
         dc.findAndClick("deleteProduct");
+        Parent.waitInvisibilityOf("success",1);
 
     }
 
@@ -96,13 +97,16 @@ public class _01_AdidasTest {
 
     @Then("Capture and log purchase Id and Amount")
     public void captureAndLogPurchaseIdAndAmount() {
+
+        dc.findAndGetText("idAmount");
+
     }
 
     @And("Assert purchase amount equals expected")
     public void assertPurchaseAmountEqualsExpected() {
     }
 
-    @And("Click on Ok")
+    @And("Click on \"Ok\"")
     public void clickOnOk() {
     }
 }

@@ -48,6 +48,11 @@ public class Parent {
         wait.until(ExpectedConditions.elementToBeClickable(element));
     }
 
+    public static void waitInvisibilityOf(String locator, int number) {
+        WebDriverWait wait = new WebDriverWait(GWD.getDriver(), Duration.ofSeconds(30));
+        wait.until(ExpectedConditions.numberOfElementsToBe(By.className(locator),number));
+    }
+
     public static void waitUntilAlert() {
         WebDriverWait wait = new WebDriverWait(GWD.getDriver(), Duration.ofSeconds(30));
         wait.until(ExpectedConditions.alertIsPresent());

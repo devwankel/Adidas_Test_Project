@@ -53,9 +53,13 @@ public class DialogContent extends Parent {
     @FindBy(xpath = "//button[text()='Purchase']")
     private WebElement purchase;
 
+    @FindBy(className = "text-muted")
+    private WebElement idAmount;
+
+
     WebElement myElement;
 
-    public void findAndSend(String strElement, String value) {  // 2.aşama
+    public void findAndSend(String strElement, String value) {
         switch (strElement) {
             case "name": myElement = name; break;
             case "country": myElement = country; break;
@@ -86,7 +90,7 @@ public class DialogContent extends Parent {
 
     public void findAndContainsText(String strElement, String text) {
         switch (strElement) {
-            //case "productName" : myElement =productName; break;
+            //case "dellText" : myElement =dellText; break;
         }
 
         verifyContainsText(myElement, text);
@@ -94,7 +98,7 @@ public class DialogContent extends Parent {
 
     public String  findAndGetText(String strElement) {
         switch (strElement) {
-            //case "productName" : myElement =productName; break;
+            //case "dellText" : myElement =dellText; break;
         }
 
         return verifyContainsText(myElement);
@@ -107,6 +111,5 @@ public class DialogContent extends Parent {
 
         clear(myElement);
     }
-
 
 }

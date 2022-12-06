@@ -97,8 +97,17 @@ public class _01_AdidasTest {
 
     @Then("Capture and log purchase Id and Amount")
     public void captureAndLogPurchaseIdAndAmount() {
+        String value= dc.findAndGetText("idAmount");
+        int ss=value.indexOf("Id:")+2;
+        int tt=value.indexOf("Amount:");
+        String id=value.substring(ss+2,tt);
+        System.out.print("id="+id);
 
-        dc.findAndGetText("idAmount");
+        int amountIndex=value.indexOf("Amount:")+8;
+        int card=value.indexOf("Card");
+        String amount=value.substring(amountIndex,card);
+        System.out.print("amount="+id);
+
 
     }
 

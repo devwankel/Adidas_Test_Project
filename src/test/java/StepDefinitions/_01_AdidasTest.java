@@ -7,6 +7,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import junit.framework.Assert;
 
 public class _01_AdidasTest {
 
@@ -106,13 +107,23 @@ public class _01_AdidasTest {
         int amountIndex=value.indexOf("Amount:")+8;
         int card=value.indexOf("Card");
         String amount=value.substring(amountIndex,card);
-        System.out.print("amount="+id);
+        System.out.print("amount="+amount);
 
 
     }
 
     @And("Assert purchase amount equals expected")
     public void assertPurchaseAmountEqualsExpected() {
+
+        String value= dc.findAndGetText("idAmount");
+        int amountIndex=value.indexOf("Amount:")+8;
+        int card=value.indexOf("Card");
+        String amount=value.substring(amountIndex,card-5);
+
+        Assert.assertEquals(dc.findAndGetText("productPrice"),amount);
+
+
+
     }
 
     @And("Click on \"Ok\"")

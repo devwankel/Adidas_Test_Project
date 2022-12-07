@@ -56,6 +56,9 @@ public class DialogContent extends Parent {
     @FindBy(xpath = "//p[@class='lead text-muted ']")
     private WebElement idAmount;
 
+    @FindBy(xpath = "//td[text()='790']")
+    private WebElement productPrice;
+
 
     WebElement myElement;
 
@@ -99,6 +102,7 @@ public class DialogContent extends Parent {
     public String  findAndGetText(String strElement) {
         switch (strElement) {
             case "idAmount" : myElement =idAmount; break;
+            case "productPrice" : myElement =productPrice; break;
         }
 
         return verifyContainsText(myElement);

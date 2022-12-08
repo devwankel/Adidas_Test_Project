@@ -70,8 +70,12 @@ public class _01_AdidasTest {
 
     }
 
+    String productPrice;
+
     @And("Click on \"Place order\"")
     public void clickOn() {
+
+        productPrice = dc.findAndGetText("productPrice");
 
         dc.findAndClick("placerOrder");
 
@@ -120,13 +124,14 @@ public class _01_AdidasTest {
         int card=value.indexOf("Card");
         String amount=value.substring(amountIndex,card-5);
 
-        Assert.assertEquals(dc.findAndGetText("productPrice"),amount);
-
-
+        Assert.assertEquals(productPrice,amount);
 
     }
 
     @And("Click on \"Ok\"")
     public void clickOnOk() {
+
+        dc.findAndClick("ok");
+
     }
 }

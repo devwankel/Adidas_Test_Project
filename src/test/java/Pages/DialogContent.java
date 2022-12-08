@@ -59,6 +59,8 @@ public class DialogContent extends Parent {
     @FindBy(xpath = "//td[text()='790']")
     private WebElement productPrice;
 
+    @FindBy(xpath = "//button[@class='confirm btn btn-lg btn-primary']")
+    private WebElement ok;
 
     WebElement myElement;
 
@@ -86,6 +88,7 @@ public class DialogContent extends Parent {
             case "deleteProduct" : myElement = deleteProduct; break;
             case "placerOrder" : myElement = placerOrder; break;
             case "purchase" : myElement = purchase; break;
+            case "ok" : myElement = ok; break;
         }
 
         clickFunction(myElement);
